@@ -1,0 +1,86 @@
+
+@font-face {
+	font-family: 'tommy';
+	src: url('/fonts/police.otf') format('opentype')
+}
+
+/*  pour la page de connexion  */
+h1 {
+    color: rgb(255, 255, 255);
+    font-family: 'tommy', sans-serif;
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+  
+header {
+    background-color: rgb(128, 186, 140);
+    height: 75;
+    background-size: cover;
+    color: #fff;
+    justify-content: space-between;
+    padding: 15px 20px;
+    text-align: center;
+  }
+  
+.burger-checkbox {
+    display: none;
+  }
+  
+.burger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    right: 10px;
+    position: fixed;
+    top: 10px;
+  }
+  
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.4s;
+
+  }
+  
+
+  
+.menu {
+    display: none;
+    background-color: #444;
+    padding: 20px;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+  }
+  
+.menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+.menu ul li {
+    margin-bottom: 10px;
+  }
+  
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .menu ul li a:hover {
+    color: #ffcc00;
+  }
+  
+  /* Affichage du menu au clic */
+.burger-checkbox:checked ~ .menu {
+    display: block;
+  }
+  
