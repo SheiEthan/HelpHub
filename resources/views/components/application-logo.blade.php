@@ -5,4 +5,4 @@
   }
 </style>
 
-<img src="favicon.ico">
+<img src="/favicon.ico">

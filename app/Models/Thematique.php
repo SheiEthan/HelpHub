@@ -18,6 +18,11 @@ class Thematique extends Model
         "titre_thematique"
     ];
 
-
-
+    public function publications(){
+        return $this->belongsToMany(
+            Publication::class,
+            'thematique_publication',
+            'id_thematique',
+            'id_publication');
+    }
 }

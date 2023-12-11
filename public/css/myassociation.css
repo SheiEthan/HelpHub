@@ -1,0 +1,82 @@
+#res_pub{
+    width: 900px; 
+    height: 275px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 150px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255); 
+    filter: drop-shadow(0 0 0.30rem rgb(75, 75, 75));
+    display: inline-block ;
+    border-style: none;
+    margin-top: 20px;
+
+}
+
+#titrepubli{
+    color:rgb(103, 156, 113);
+    font-size: 25px;
+}
+
+#titrerech{
+    color: rgb(103, 156, 113);
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.infos {
+    font-size: 13px;
+    margin-left: 350px;
+    margin-top: 20px;
+    text-align: end;
+    margin-right: -10px;
+}
+
+.imgphoto {
+    width: 300px;
+    height: 200px;
+    border-radius: 5%;
+}
+
+.infotitre {
+    margin-left: 325px;
+    margin-top: -200px;
+}
+
+.soutiens {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.like {
+    cursor:pointer;
+    width: 40px;
+  }
+
+#res_recherche {
+    margin-left: 120px;
+}
+
+form {
+    margin-bottom: -4px;
+}
+
+#filtre {
+    position: relative;
+    margin-left: 87%
+}
+
+.bouton {
+    position: relative;
+    text-align: center;
+    padding: 5px;
+}
+
+.voir {
+    color: blue;
+}
+

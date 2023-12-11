@@ -1,0 +1,108 @@
+#res_pub{
+    width: 900px; 
+    height: auto; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 370px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255); 
+    filter: drop-shadow(0 0 0.30rem rgb(75, 75, 75));
+    display: inline-block ;
+    border-style: none;
+    margin-top: 20px;
+}
+
+#titrepubli{
+    color:rgb(103, 156, 113);
+}
+
+#titrerech{
+    color: rgb(103, 156, 113);
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.infos {
+    font-size: 13px;
+    margin-left: 350px;
+    margin-top: 20px;
+    text-align: end;
+    margin-right: -10px;
+}
+
+.imgphoto {
+    width: 300px;
+    height: 200px;
+    border-radius: 5%;
+}
+
+.infotitre {
+    margin-left: 325px;
+    margin-top: -200px;
+}
+
+.soutiens {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.like {
+    cursor:pointer;
+    width: 40px;
+  }
+
+#res_recherche {
+    margin-left: 120px;
+}
+
+.buttonv {
+  margin-top: 10px;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: green;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+  }
+  
+  .buttonv:hover {
+    border: 1px solid white;
+  }
+  
+  .buttonv:active {
+    box-shadow: 4px 4px 12px #c5c5c5,
+               -4px -4px 12px #ffffff;
+  }
+
+
+  .buttonr {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: red;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+  }
+  
+  .buttonr:hover {
+    border: 1px solid white;
+  }
+  
+  .buttonr:active {
+    box-shadow: 4px 4px 12px #c5c5c5,
+               -4px -4px 12px #ffffff;
+  }
+
+#voir {
+  color: blue;
+}

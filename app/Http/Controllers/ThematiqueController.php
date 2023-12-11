@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Thematique;
+use App\Models\Publication;
 use Illuminate\Http\Request;
 
 class ThematiqueController extends Controller
@@ -13,10 +14,12 @@ class ThematiqueController extends Controller
     {
         $thematiques = Thematique::all();
 
-        return view('welcome', ['thematiques' => $thematiques]);
+        return ['thematiques' => $thematiques];
     }
 
-     
+    // pour recuperer les 3 dernier action poste  
+
+
     /*
     public function showThematique(Request $request)
     {

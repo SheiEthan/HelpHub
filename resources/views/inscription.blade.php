@@ -36,7 +36,7 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="nom_utilisateur">Nom de famille:</label>
+                    <label for="nom_utilisateur">Nom:</label>
                     <input type="text" id="nom_utilisateur" name="nom_utilisateur" required>
                     @error('nom_utilisateur')
                     {{$message}}

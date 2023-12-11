@@ -11,6 +11,8 @@
             <x-input-label for="password" :value="__('Mot de passe')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
+                            minLength=12
+                            pattern="(?=.*[0-9])(?=.*[#?!@$%^&*-_\/])(?=.*[a-z])(?=.*[A-Z]).{12,}"
                             type="password"
                             name="password"
                             required autocomplete="current-password" />

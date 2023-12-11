@@ -15,6 +15,40 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Votre compte') }}
                     </x-nav-link>
+                    @if(Auth::User()->service_diffusion)
+                    <x-nav-link :href="route('servicediffusion')" :active="request()->routeIs('servicediffusion')">
+                        {{ __('Gestion des Commentaire') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('servicediffusionpublication')" :active="request()->routeIs('servicediffusionpublication')">
+                        {{ __('Gestion des Publication') }}
+                    </x-nav-link>
+                    @elseif(Auth::User()->service_benevole)
+                    <x-nav-link :href="route('servicebenevolat')" :active="request()->routeIs('servicebenevolat')">
+                        {{ __('Validation Candidatures') }}
+                    </x-nav-link>
+                    @else
+                    <x-nav-link :href="route('mypublications')" :active="request()->routeIs('mypublications')">
+                        {{ __('Vos actions') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('myalertes')" :active="request()->routeIs('myalertes')">
+                        {{ __('Vos alertes') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('mycandidatures')" :active="request()->routeIs('mycandidatures')">
+                        {{ __('Vos candidatures') }}
+                    </x-nav-link>
+                    @if(isset(Auth::User()->association))
+                    <x-nav-link :href="route('myassociation')" :active="request()->routeIs('myassociation')">
+                        {{ __('Votre association') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('gestionheures')" :active="request()->routeIs('gestionheures')">
+                        {{ __('Gestion des heures') }}
+                    </x-nav-link>
+                    @else
+                    <x-nav-link :href="route('createassociation')" :active="request()->routeIs('createassociation')">
+                        {{ __('Association') }}
+                    </x-nav-link>
+                    @endif
+                    @endif
                 </div>
             </div>
 

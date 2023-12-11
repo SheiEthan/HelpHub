@@ -42,4 +42,60 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function publi_likes(){
+        return $this->hasMany(
+            Liker_publi::class,
+            'id_user'
+        );
+    }
+
+    public function likes(){
+        return $this->hasMany(
+            Liker::class,
+            'id_user'
+        );
+    }
+
+    public function signals(){
+        return $this->hasMany(
+            Signaler::class,
+            'id_user'
+        );
+    }
+
+    public function historiques(){
+        return $this->hasMany(
+            Historique::class,
+            'id_user'
+        );
+    }
+
+    public function utilisateur(){
+        return $this->belongsTo(
+            Utilisateur::class,
+            'id',
+            'id_user'
+        );
+    }
+
+    public function association(){
+        return $this->belongsTo(
+            Association::class,
+            'id',
+            'id_user'
+        );
+    }
+
+    public function alerte(){
+        return $this->belongsTo(
+            Alerte::class,
+            'id',
+            'id_user'
+        );
+    }
+
+
+
+
 }

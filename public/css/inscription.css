@@ -161,4 +161,15 @@ h2 {
 
 .bouton:hover {
     background-color: rgb(108, 157, 118); 
-    }
+}
+
+.champs {
+    font-size: 10px;
+    opacity: 10;
+}
+
+.mdp {
+    font-size: 10px;
+    opacity: 10;
+    text-align: justify;
+}

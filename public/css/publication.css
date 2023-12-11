@@ -1,0 +1,339 @@
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30%;
+}
+
+#description {
+  margin-right: 10%;
+}
+
+#datepubli{
+  color: grey;
+}
+
+#detailpub{
+  margin-left: 300px;
+}
+
+h2{
+  margin-left: 50px;
+}
+
+.titreannonce{
+  color: rgb(128, 186, 140);
+  text-align: left;
+  margin-left: -100px;
+}
+
+.bookmarkBtn {
+  width: 130px;
+  height: 40px;
+  border-radius: 40px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.062);
+}
+
+.IconContainer {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(128, 186, 140);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: .3s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(26, 26, 26);
+  z-index: 1;
+  transition-duration: .3s;
+  font-size: 1.04em;
+  font-weight: 600;
+}
+
+.bookmarkBtn:hover .IconContainer {
+  width: 120px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.bookmarkBtn:hover .text {
+  transform: translate(10px);
+  width: 0;
+  font-size: 0;
+  transition-duration: .3s;
+}
+
+.bookmarkBtn:active {
+  transform: scale(0.95);
+  transition-duration: .3s;
+}
+
+#trucComm{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  height: 42%;
+  pointer-events: none;
+  z-index: 5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#title {
+ color: rgb(128, 186, 140);
+
+}
+
+.showComm{
+  background-color: #ffffff;
+  pointer-events: all !important;
+  border: solid 1px black
+
+}
+
+#crooss {
+  position: fixed;
+  border-radius: 25%;
+  margin-left: 82%;
+  background-color: rgb(128, 186, 140);
+}
+
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  position: relative;
+}
+
+.form .group label {
+  font-size: 14px;
+  color: rgb(99, 102, 102);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  transition: all .3s ease;
+}
+
+.form .group input,
+.form .group textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  outline: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+.form .group input:placeholder-shown+ label, .form .group textarea:placeholder-shown +label {
+  top: 10px;
+  background-color: transparent;
+}
+
+.form .group input:focus,
+.form .group textarea:focus {
+  border-color: #3366cc;
+}
+
+.form .group input:focus+ label, .form .group textarea:focus +label {
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  color: #3366cc;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form .group textarea {
+  resize: none;
+  height: 100px;
+}
+
+.form button {
+  background-color: rgb(128, 186, 140);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  background-color: rgb(128, 186, 140);
+}
+
+.medias {
+  height: 100px;
+}
+
+.imgmedia {
+  height: 300px;
+  width: 400px;
+  display: flex;
+  border-radius: 5%;
+}
+
+.info{
+  margin-left: 200px;
+  margin-top: -275px;
+  margin-bottom: 50px;
+}
+
+.caroussel {
+  width: 425px;
+  height: 300px;
+  overflow:auto;
+  margin-left: -250px;
+  margin-top: 50px;
+}
+
+img.imgmedia {
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+#bg {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#lightbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 3rem;
+  box-sizing: border-box;
+  z-index:10;  
+}
+
+#lightbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-style: ridge;
+  border-color: white;
+}
+
+#lightbox #close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  background: white;
+  border-radius: 10px;
+} 
+
+
+.comm {
+  border-color: black;
+  border-style: ridge;
+  border-width: 1px;
+  padding: 10px;
+  margin-bottom: -10px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+#commEnGras{
+  font-weight: bold;
+}
+
+.commentaires {
+  margin-top: 270px;
+  margin-left: -475px; 
+}
+
+.divComm p{
+  display: inline-block;
+}
+
+.emoji {
+  cursor:pointer;
+  margin-bottom: 20px;
+  width: 40px;
+}
+
+/* Pour le bouton candidature  */
+
+.btnC{
+  width: 300px;
+  height: 50px;
+  background-color: rgb(128, 186, 140);
+  color: white;
+  font-size: 20px;
+  margin-left: 60%;
+  border-radius: 10px;
+  border-style: none;
+  cursor:pointer;
+}
+
+.noemoji {
+  margin-left: -10px;
+  margin-right: 5px;
+}
+
+#map {
+  position: relative;
+  top: 90px;
+  margin-left: -500px;
+  margin-bottom: -150px;
+}
+
+#candidature {
+  text-decoration: none;
+}
+
+#candidature:visited {
+  color: blue;
+}

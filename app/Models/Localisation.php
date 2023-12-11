@@ -19,4 +19,12 @@ class Localisation extends Model
         "ville",
         "code_postal"
     ];
+
+    public function publications(){
+        return $this->hasMany(
+            Publication::class,
+            'id_localisation'
+
+        );
+    }    
 }

@@ -15,7 +15,9 @@
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Mot de passe')" />
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+            <x-text-input id="password" class="block mt-1 w-full" minLength=12
+                            pattern="(?=.*[0-9])(?=.*[#?!@$%^&*-_\/])(?=.*[a-z])(?=.*[A-Z]).{12,}"
+ type="password" name="password" required autocomplete="new-password" />
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
@@ -24,6 +26,8 @@
             <x-input-label for="password_confirmation" :value="__('Confirmez le mot de passe')" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
+            minLength=12
+                            pattern="(?=.*[0-9])(?=.*[#?!@$%^&*-_\/])(?=.*[a-z])(?=.*[A-Z]).{12,}"
                                 type="password"
                                 name="password_confirmation" required autocomplete="new-password" />
 

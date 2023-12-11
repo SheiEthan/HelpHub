@@ -29,19 +29,19 @@
 
         <div>
             <x-input-label for="nom_utilisateur" :value="__('Nom :')" />
-            <x-text-input id="nom_utilisateur" name="nom_utilisateur" type="text" class="mt-1 block w-full" :value="old('nom_utilisateur', $utilisateur->nom_utilisateur)" required autofocus autocomplete="nom_utilisateur" />
+            <x-text-input id="nom_utilisateur" name="nom_utilisateur" type="text" class="mt-1 block w-full" pattern="[A-Za-z]{3,255}" :value="old('nom_utilisateur', $utilisateur->nom_utilisateur)" required autofocus autocomplete="nom_utilisateur" />
             <x-input-error class="mt-2" :messages="$errors->get('nom_utilisateur')" />
         </div>
 
         <div>
-            <x-input-label for="prenom_utilisateur" :value="__('Prénom:')" />
-            <x-text-input id="prenom_utilisateur" name="prenom_utilisateur" type="text" class="mt-1 block w-full" :value="old('prenom_utilisateur', $utilisateur->prenom_utilisateur)" required autofocus autocomplete="pseudo_utilisateur" />
+            <x-input-label for="prenom_utilisateur" :value="__('Prénom :')" />
+            <x-text-input id="prenom_utilisateur" name="prenom_utilisateur" type="text" class="mt-1 block w-full" pattern="[A-Za-z]{3,255}" :value="old('prenom_utilisateur', $utilisateur->prenom_utilisateur)" required autofocus autocomplete="pseudo_utilisateur" />
             <x-input-error class="mt-2" :messages="$errors->get('prenom_utilisateur')" />
         </div>
 
         <div>
             <x-input-label for="numero_telephone_utilisateur" :value="__('Téléphone :')" />
-            <x-text-input id="numero_telephone_utilisateur" name="numero_telephone_utilisateur" type="text" class="mt-1 block w-full" :value="old('numero_telephone_utilisateur', $utilisateur->numero_telephone_utilisateur)"  autofocus autocomplete="numero_telephone_utilisateur" />
+            <x-text-input id="numero_telephone_utilisateur" name="numero_telephone_utilisateur" type="tel" pattern="0[0-9]{9}" placeholder="01 23 45 67 89"  class="mt-1 block w-full" :value="old('numero_telephone_utilisateur', $utilisateur->numero_telephone_utilisateur)"  autofocus autocomplete="numero_telephone_utilisateur" />
             <x-input-error class="mt-2" :messages="$errors->get('numero_telephone_utilisateur')" />
         </div>
 
@@ -53,7 +53,7 @@
                         <option value=""></option>
                         <option value="{{$la_localisation[0]->id_localisation}}" selected >{{$la_localisation[0]->pays}} / {{$la_localisation[0]->ville}} / {{$la_localisation[0]->code_postal}}</option>
                     @else
-                    <option value="">--Choisi un localisation</option>
+                    <option value="">--Choisir une localisation--</option>
                     @endif
                 @foreach ($localisations as $localisation)
                 <option value="{{$localisation->id_localisation}}">{{$localisation->pays}} / {{$localisation->ville}} / {{$localisation->code_postal}}</option>
@@ -89,15 +89,7 @@
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Sauvegarder') }}</x-primary-button>
 
-            @if (session('status') === 'profile-updated')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600 dark:text-gray-400"
-                >{{ __('Sauvegardé.') }}</p>
-            @endif
+
         </div>
     </form>
 </section>

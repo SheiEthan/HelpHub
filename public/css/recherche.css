@@ -1,0 +1,420 @@
+/* la partie filtre */
+
+#res_recherche{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.recherche{
+  margin-bottom: 20px;
+}
+
+#titrefiltre{
+    color: white;
+    margin-left: 30px;
+}
+
+button{
+    background-color:rgb(103, 156, 113);
+    border-style: none;
+    color: white;
+    width: 297px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    cursor:pointer;
+}
+
+#res_pub{
+    width: 900px; 
+    height: 275px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 30px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255); 
+    filter: drop-shadow(0 0 0.30rem rgb(75, 75, 75));
+    display: inline-block ;
+    border-style: none;
+}
+
+#titrepubli{
+    color:rgb(103, 156, 113);
+}
+
+#titrerech{
+    color: rgb(103, 156, 113);
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30%;
+  }
+
+.filtre {
+    width: 370px;
+    margin-left: 20px;
+    margin-top:38px;
+
+}
+
+fieldset {
+    width: 270px;
+    margin-left: 20px;
+}
+
+.maDiv {
+    display: flex;
+}
+
+.bene {
+    margin-left: 60px;
+}
+
+ul#pagination li {
+    list-style: none;
+    float: left;
+    padding: 0px 5px 0px 5px;
+    width: 20px;
+    margin: 0px 0px 4px 0px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+    
+ul#pagination li.navigation {
+    width: 100px;
+}
+    
+ul#pagination li a {
+    display: block;
+    padding: 4px 6px 4px 6px;
+    font-size: 12px;
+    text-align: center;
+}
+    
+ul#pagination li a, ul#pagination li a:visited, ul#pagination li a.actuel, ul#pagination li a:hover {
+    background-color: #0072bc;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+    
+    
+ul#pagination li a.actuel, ul#pagination li a:hover {
+    background-color: #e7e7e7;
+    color: #000000;
+}
+    
+ul#pagination li.navigation a, ul#pagination li.navigation a:visited, ul#pagination li.navigation a:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+    
+ul#pagination li.navigation a:hover {
+    text-decoration: underline;
+    
+}
+    
+ul#pagination li.navigation a.inactif, ul#pagination li.navigation a.inactif:visited, ul#pagination li.navigation a.inactif:hover {
+    text-decoration: none;
+    color: #999999;
+}
+
+.titre {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+span {
+    cursor: pointer;
+}
+
+
+
+.collapsible{
+    border-style: ridge;
+    border-width: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-color: rgb(211, 211, 211);
+    margin-left: 20px;
+    width: 254px;
+    background-color: white;
+}
+
+.noselect {
+    -moz-user-select: none; /* Firefox */
+   -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+   -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+   user-select: none; /* Propriété standard */
+   margin-left: -30px;
+  }
+
+
+.infos {
+    font-size: 13px;
+    margin-left: 350px;
+    margin-top: 20px;
+    text-align: end;
+    margin-right: -10px;
+}
+
+.imgphoto {
+    width: 300px;
+    height: 200px;
+    border-radius: 5%;
+}
+
+.infotitre {
+    margin-left: 325px;
+    margin-top: -200px;
+}
+/* form{
+    background-color: white;
+} */
+
+.ui-like {
+    --icon-size: 24px;
+    --icon-secondary-color: rgb(194, 194, 194);
+    --icon-hover-color: rgb(105, 105, 105);
+    --icon-primary-color: rgb(230, 26, 26);
+    --icon-circle-border: 1px solid var(--icon-primary-color);
+    --icon-circle-size: 35px;
+    --icon-anmt-duration: 0.3s;
+  }
+  
+  .ui-like input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: none;
+  }
+  
+  .ui-like .like {
+    width: var(--icon-size);
+    height: auto;
+    fill: var(--icon-secondary-color);
+    cursor: pointer;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    -webkit-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+  }
+  
+  .like::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    -webkit-box-shadow: 0 30px 0 -4px var(--icon-primary-color),
+      30px 0 0 -4px var(--icon-primary-color),
+      0 -30px 0 -4px var(--icon-primary-color),
+      -30px 0 0 -4px var(--icon-primary-color),
+      -22px 22px 0 -4px var(--icon-primary-color),
+      -22px -22px 0 -4px var(--icon-primary-color),
+      22px -22px 0 -4px var(--icon-primary-color),
+      22px 22px 0 -4px var(--icon-primary-color);
+    box-shadow: 0 30px 0 -4px var(--icon-primary-color),
+      30px 0 0 -4px var(--icon-primary-color),
+      0 -30px 0 -4px var(--icon-primary-color),
+      -30px 0 0 -4px var(--icon-primary-color),
+      -22px 22px 0 -4px var(--icon-primary-color),
+      -22px -22px 0 -4px var(--icon-primary-color),
+      22px -22px 0 -4px var(--icon-primary-color),
+      22px 22px 0 -4px var(--icon-primary-color);
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  
+  .like::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: var(--icon-circle-border);
+    opacity: 0;
+  }
+  
+  /* actions */
+  
+  .ui-like:hover .like {
+    fill: var(--icon-hover-color);
+  }
+  
+  .ui-like input:checked + .like::after {
+    -webkit-animation: circles var(--icon-anmt-duration)
+      cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: circles var(--icon-anmt-duration)
+      cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    -webkit-animation-delay: var(--icon-anmt-duration);
+    animation-delay: var(--icon-anmt-duration);
+  }
+  
+  .ui-like input:checked + .like {
+    fill: var(--icon-primary-color);
+    -webkit-animation: like var(--icon-anmt-duration) forwards;
+    animation: like var(--icon-anmt-duration) forwards;
+    -webkit-transition-delay: 0.3s;
+    -o-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+  
+  .ui-like input:checked + .like::before {
+    -webkit-animation: circle var(--icon-anmt-duration)
+      cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: circle var(--icon-anmt-duration)
+      cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    -webkit-animation-delay: var(--icon-anmt-duration);
+    animation-delay: var(--icon-anmt-duration);
+  }
+  
+  @-webkit-keyframes like {
+    50% {
+      -webkit-transform: scaleY(0.6);
+      transform: scaleY(0.6);
+    }
+  
+    100% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+  }
+  
+  @keyframes like {
+    50% {
+      -webkit-transform: scaleY(0.6);
+      transform: scaleY(0.6);
+    }
+  
+    100% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+  }
+  
+  @-webkit-keyframes circle {
+    from {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+  
+    90% {
+      width: var(--icon-circle-size);
+      height: var(--icon-circle-size);
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes circle {
+    from {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+  
+    90% {
+      width: var(--icon-circle-size);
+      height: var(--icon-circle-size);
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @-webkit-keyframes circles {
+    from {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+  
+    40% {
+      opacity: 1;
+    }
+  
+    to {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes circles {
+    from {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+  
+    40% {
+      opacity: 1;
+    }
+  
+    to {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+      opacity: 0;
+    }
+}
+
+.soutiens {
+    display: inline-block;
+}
+
+.recherche {
+  border-style: ridge;
+  border-width: 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-color: rgb(211, 211, 211);
+  margin-left: 20px;
+  width: 284px;
+  background-color: white;
+}
+
+.like {
+  cursor:pointer;
+  margin-top: -7px;
+  width: 40px;
+}
