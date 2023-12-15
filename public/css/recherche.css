@@ -30,7 +30,7 @@ button{
 
 #res_pub{
     width: 900px; 
-    height: 275px; 
+    height: auto; 
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;

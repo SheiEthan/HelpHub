@@ -362,8 +362,8 @@ class PublicationController extends Controller
         $publicationshistorique=collect();
 
         foreach(Auth::User()->utilisateur->candidatures as $publication){
-            $publications->add($publication->publication_recherche_benevole->publication);
-            $publicationsbenevole->add($publication->publication_recherche_benevole->publication);
+            $publications->add($publication->recherche_benevole->publication);
+            $publicationsbenevole->add($publication->recherche_benevole->publication);
         }
 
         foreach(Auth::User()->utilisateur->dons as $publication){
@@ -596,6 +596,30 @@ class PublicationController extends Controller
             $filtredassoc=$filtredloc;
         }        
 
+        foreach($filtredassoc as $publication){
+            
+            if(null !==$publication->information_don->first()){
+                $publication->totmontant =0;
+                    foreach($publication->information_don->first()->dons as $don)
+                    {
+                        $publication->totmontant += $don->montant;
+                    }
+                
+            }
+            if(null !== $publication->recherche_benevole->first()){
+                foreach($publication->recherche_benevole as $benevole)
+                {
+                    $publication->benevoles=$benevole->candidatures->count();
+                }
+            }
+
+
+        }
+
+        foreach($filtredassoc as $publication){
+            $publication->nblikes=$publication->likes->count();
+        }
+
         return view('alerte', ['publications' => $filtredassoc->sortByDesc('date_saisi')] 
         +$this->getFiltres($request)
     );
@@ -626,7 +650,6 @@ class PublicationController extends Controller
         }
         return redirect("/myalertes");
     }
-
 
 
 }

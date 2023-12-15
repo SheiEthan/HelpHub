@@ -7,17 +7,18 @@
     <script defer type = "module" src=" {{asset('js/welcome.js')}}"> </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>HelpHub</title>
+    @cookieconsentscripts
 </head>
 <body>
     <header>
-
+      
    
 
     	<h1>HelpHub</h1>
         <h2>Bénévolat</h2> 
         <img id="fleche" src="/img/fleche.png">
     </header>
-    
+    @cookieconsentview
     
     <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
     <label for="burger-checkbox" class="burger">
@@ -96,6 +97,8 @@
                 <li classe="lifooter">
                     <a href="/" title="Devenir Bénévole">Chercher Bénévoles</a>
                 </li>
+                <li><a href="/cookies">Page cookies</a></li>
+                <li><a href="/politiquesprotec">Politiques de confidentialité</a></li>
             </ul>
             <small class="droit">Copyright © 2023 HelpHub.fr. Tous droits réservés.</small>
         </nav>        

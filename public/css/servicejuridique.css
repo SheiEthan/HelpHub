@@ -1,0 +1,78 @@
+
+.res_candidature {
+    width: 900px; 
+    height: auto; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 30px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255); 
+    filter: drop-shadow(0 0 0.30rem rgb(75, 75, 75));
+    display: inline-block ;
+    border-style: none;
+    margin-top: 20px;
+}
+
+
+.buttonv {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: green;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+    margin-top: 20px;
+  }
+  
+  .buttonv:hover {
+    border: 1px solid white;
+  }
+  
+  .buttonv:active {
+    box-shadow: 4px 4px 12px #c5c5c5,
+               -4px -4px 12px #ffffff;
+  }
+
+
+  .buttonr {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: red;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+    margin-top: 10px;
+  }
+  
+  .buttonr:hover {
+    border: 1px solid white;
+  }
+  
+  .buttonr:active {
+    box-shadow: 4px 4px 12px #c5c5c5,
+               -4px -4px 12px #ffffff;
+  }
+
+#candidature {
+  margin-top: 20px;
+}
+
+#user {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(103, 156, 113);
+}
+
+
+  
+
+

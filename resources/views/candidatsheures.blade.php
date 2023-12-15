@@ -66,9 +66,9 @@
                         <div class="divComm">
                             <div class="comm">
                                 <p id="commEnGras">{{$candidature->utilisateur->nom_utilisateur}} {{$candidature->utilisateur->prenom_utilisateur}} </p>
-                                <x-input-label for="{{'heures'.$candidature->id_utilisateur}}" :value="__('Heures :')" />
-                                <x-text-input id="{{'heures'.$candidature->id_utilisateur}}" name="{{'heures'.$candidature->id_utilisateur}}" type="number"   value="{{$candidature->heures}}"   autocomplete="{{'heures'.$candidature->id_utilisateur}}" />
-                                <x-input-error class="mt-2" :messages="$errors->get('{{heures.$candidature->id_utilisateur}}')" />
+                                <x-input-label for="{{'heures'.$candidature->id_utilisateur.'-'.$candidature->num_semaine}}" :value="__('Heures :')" />
+                                <x-text-input id="{{'heures'.$candidature->id_utilisateur.'-'.$candidature->num_semaine}}" name="{{'heures'.$candidature->id_utilisateur.'-'.$candidature->num_semaine}}" type="number"   value="{{$candidature->heures}}"   autocomplete="{{'heures'.$candidature->id_utilisateur.'-'.$candidature->num_semaine}}" />
+                                <x-input-error class="mt-2" :messages="$errors->get('{{heures.$candidature->id_utilisateur.-.$candidature->num_semaine}}')" />
                             </div> 
                         </div>                               
                     @endforeach

@@ -1,0 +1,20 @@
+#button {
+    background-color: rgb(103, 156, 113);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#thematique_text {
+    height: 40px;
+    width: 700px;
+}
+
+#label1 {
+    position: relative;
+    margin-left: 10px;
+}
+
+#affichethematique {
+    margin-left: 10px;
+}

@@ -11,7 +11,7 @@ class Candidature extends Model
     use HasFactory;
     use HasCompositeKey;
     protected $table = "candidature";
-    protected $primaryKey =(["id_utilisateur","id_recherche_benevole"]);
+    protected $primaryKey =(["id_utilisateur","id_recherche_benevole","num_semaine"]);
     public $timestamps = false;
 
 
@@ -20,8 +20,9 @@ class Candidature extends Model
         "id_recherche_benevole",
         "statut_candidature",
         "retour_utilisateur",
-        "heures",
-        "information_suplementaire"
+        "information_suplementaire",
+        "num_semaine",
+        "heures"
     ];
 
 
@@ -35,7 +36,7 @@ class Candidature extends Model
         );
     }
 
-    public function publication_recherche_benevole(){
+    public function recherche_benevole(){
         return $this->hasOne(
             Publication_recherche_benevole::class,
             'id_recherche_benevole',
@@ -51,6 +52,8 @@ class Candidature extends Model
             'id_utilisateur'
         );
     }
+
+
 
    
 }

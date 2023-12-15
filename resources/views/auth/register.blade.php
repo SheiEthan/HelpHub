@@ -4,7 +4,7 @@
 
     <form method="POST" action="{{ route('register') }}">
         @csrf
-
+        <x-input-error :messages="$errors->get('google')" class="mt-2" />
         <div class="register-header">
             <h2>Inscription</h2>
         </div>

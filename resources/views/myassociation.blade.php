@@ -9,7 +9,7 @@
                     <option value="5">Tout</option>
                         <option value="1">En cours de vérification</option>
                         <option value="2">Active</option>
-                        <option value="3">Expiré</option>
+                        <option value="3">Invisible</option>
                         <option value="4">Refusé</option>
                             </select>
                     <x-input-error class="mt-2" :messages="$errors->get('trie')" />
@@ -24,7 +24,13 @@
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
 
-                        {{ __("Votre association") }}
+
+                        @if (session('status') === 'publication-updated')
+
+                                    {{ __('Détails de la publication mise à jour !') }}
+                    @else
+                    {{ __("Votre association") }}
+                     @endif
                     </div>
             </div>
             <div class="bouton">
@@ -46,6 +52,7 @@
                                 <h2 id="titrepubli" value="{{ $publication->id_publication }}"> {{ $publication->titre_publication}} </h2>
                                 <p> {{$publication->resume}}</p>
                                 <a class="voir" href="/publication/{{ $publication->id_publication}}"> voir plus </a>
+                                <a  href="/publication/editer/{{ $publication->id_publication}}"> editer </a>
                             </div>
                             <div class="infos"> 
                                 <p> Date de debut: {{$publication->date_debut->format('d-m-Y')}} / Date de fin :  {{$publication->date_fin->format('d-m-Y')}} </p> 
@@ -81,6 +88,7 @@
                                 <h2 id="titrepubli" value="{{ $publication->id_publication }}"> {{ $publication->titre_publication}} </h2>
                                 <p> {{$publication->resume}}</p>
                                 <a class="voir" href="/publication/{{ $publication->id_publication}}"> voir plus </a>
+                                <a  href="/publication/editer/{{ $publication->id_publication}}" class="voir"> editer </a>
                             </div>
                             <div class="infos"> 
                                 <p> Date de debut: {{$publication->date_debut->format('d-m-Y')}} / Date de fin :  {{$publication->date_fin->format('d-m-Y')}} </p> 
@@ -116,6 +124,7 @@
                                 <h2 id="titrepubli" value="{{ $publication->id_publication }}"> {{ $publication->titre_publication}} </h2>
                                 <p> {{$publication->resume}}</p>
                                 <a class="voir" href="/publication/{{ $publication->id_publication}}" class="voir"> voir plus </a>
+                                <a  href="/publication/editer/{{ $publication->id_publication}}" class="voir"> editer </a>
                             </div>
                             <div class="infos"> 
                                 <p> Date de debut: {{$publication->date_debut->format('d-m-Y')}} / Date de fin :  {{$publication->date_fin->format('d-m-Y')}} </p> 
@@ -151,6 +160,7 @@
                                 <h2 id="titrepubli" value="{{ $publication->id_publication }}"> {{ $publication->titre_publication}} </h2>
                                 <p> {{$publication->resume}}</p>
                                 <a class="voir" href="/publication/{{ $publication->id_publication}}"> voir plus </a>
+                                <a  href="/publication/editer/{{ $publication->id_publication}}" class="voir"> editer </a>
                             </div>
                             <div class="infos"> 
                                 <p> Date de debut: {{$publication->date_debut->format('d-m-Y')}} / Date de fin :  {{$publication->date_fin->format('d-m-Y')}} </p> 
@@ -185,6 +195,7 @@
                                 <h2 id="titrepubli" value="{{ $publication->id_publication }}"> {{ $publication->titre_publication}} </h2>
                                 <p> {{$publication->resume}}</p>
                                 <a class="voir" href="/publication/{{ $publication->id_publication}}"> voir plus </a>
+                                <a  href="/publication/editer/{{ $publication->id_publication}}" class="voir"> editer </a>
                             </div>
                             <div class="infos"> 
                                 <p> Date de debut: {{$publication->date_debut->format('d-m-Y')}} / Date de fin :  {{$publication->date_fin->format('d-m-Y')}} </p> 
@@ -206,7 +217,7 @@
                 </div>
 
             @if($publications->count()==0)
-                    <p>Nous avons trouvé aucunes publications correspondant à votre recherche.</p>
+                    <p>Vous n'avez pas encore publié d'actions.</p>
                     @endif 
         </div>
 

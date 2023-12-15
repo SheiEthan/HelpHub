@@ -7,6 +7,7 @@ use App\Models\Commentaire;
 use App\Models\Liker;
 use Illuminate\Support\Facades\DB;
 use App\Models\Publication;
+use App\Models\Thematique;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Signaler;
 
@@ -45,7 +46,7 @@ class DiffusionController extends Controller
 
     public function getPubValider() 
     {
-       $publications =  Publication::all()->where('etat_publication', 1);
+       $publications =  Publication::all();
 
        foreach($publications as $publication){
             
@@ -64,9 +65,32 @@ class DiffusionController extends Controller
             }
         }
 
+        $publicationsv= $publications->where("etat_publication",1);
+        $publications->where("date_fin","<",);
+        $publicationsi= $publications->where("etat_publication",3);
+        $publicationsa= $publications->where("etat_publication",2);
+        $publicationsr= $publications->where("etat_publication",4);
+
+        $publicationse=collect();
+        foreach($publications as $publication){
+            if($publication->date_fin->addDays(15)<now()){
+                $publicationse->add($publication);
+            }
+        }
+
+
+
+
 
     }
-       return view('servicediffusionpublication', ['publications' => $publications]);
+       return view('servicediffusionpublication', [
+        'publications' => $publications,
+        'publicationsi' => $publicationsi,
+        'publicationsa' => $publicationsa,
+        'publicationsr' => $publicationsr,
+        'publicationsv' => $publicationsv,
+        'publicationse' => $publicationse
+    ]);
     }
 
     public function validerpub($id) 
@@ -86,6 +110,35 @@ class DiffusionController extends Controller
 
         return redirect("/servicediffusionpublication");
         
+    }
+
+    public function cacherpub($id) 
+    {
+        $publication= Publication::findOrFail($id);
+        $publication->etat_publication=3;
+        $publication->save();
+
+        return redirect("/servicediffusionpublication");
+    }
+
+
+    
+    public function AjoutThematique(Request $request) 
+    {
+        $contenu = $request->get('thematique_text');
+        
+        Thematique::create([
+            'titre_thematique'=>$contenu
+        ]);
+
+        return redirect("/servicediffusionthematique");
+    }
+
+    public function getThematique()
+    {
+        $thematiques = Thematique::all()->sortBy('titre_thematique');
+
+        return view('servicediffusionthematique', ['thematiques' => $thematiques]);
     }
 
 

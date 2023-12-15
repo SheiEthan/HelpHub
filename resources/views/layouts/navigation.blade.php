@@ -17,14 +17,28 @@
                     </x-nav-link>
                     @if(Auth::User()->service_diffusion)
                     <x-nav-link :href="route('servicediffusion')" :active="request()->routeIs('servicediffusion')">
-                        {{ __('Gestion des Commentaire') }}
+                        {{ __('Gestion des Commentaires') }}
                     </x-nav-link>
                     <x-nav-link :href="route('servicediffusionpublication')" :active="request()->routeIs('servicediffusionpublication')">
-                        {{ __('Gestion des Publication') }}
+                        {{ __('Gestion des Publications') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('servicediffusionthematique')" :active="request()->routeIs('servicediffusionthematique')">
+                        {{ __('Ajout De Thematique ') }}
                     </x-nav-link>
                     @elseif(Auth::User()->service_benevole)
                     <x-nav-link :href="route('servicebenevolat')" :active="request()->routeIs('servicebenevolat')">
                         {{ __('Validation Candidatures') }}
+                    </x-nav-link>
+                    @elseif(Auth::User()->service_comptable)
+                    <x-nav-link :href="route('comptabledon')" :active="request()->routeIs('comptabledon')">
+                        {{ __(' Gestion des dons') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('comptablecontrat')" :active="request()->routeIs('comptablecontrat')">
+                        {{ __(' Gestion des contrat') }}
+                    </x-nav-link>
+                    @elseif(Auth::User()->service_juridique)
+                    <x-nav-link :href="route('servicejuridique')" :active="request()->routeIs('servicejuridique')">
+                        {{ __('Validation Des Informartions juridique') }}
                     </x-nav-link>
                     @else
                     <x-nav-link :href="route('mypublications')" :active="request()->routeIs('mypublications')">
@@ -36,12 +50,18 @@
                     <x-nav-link :href="route('mycandidatures')" :active="request()->routeIs('mycandidatures')">
                         {{ __('Vos candidatures') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('MesinfoBancaire')" :active="request()->routeIs('MesinfoBancaire')">
+                        {{ __('Vos information Bancaire') }}
+                    </x-nav-link>
                     @if(isset(Auth::User()->association))
                     <x-nav-link :href="route('myassociation')" :active="request()->routeIs('myassociation')">
                         {{ __('Votre association') }}
                     </x-nav-link>
                     <x-nav-link :href="route('gestionheures')" :active="request()->routeIs('gestionheures')">
                         {{ __('Gestion des heures') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('gestioncandidature')" :active="request()->routeIs('gestioncandidature')">
+                        {{ __('Gestion des Candidature') }}
                     </x-nav-link>
                     @else
                     <x-nav-link :href="route('createassociation')" :active="request()->routeIs('createassociation')">

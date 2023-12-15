@@ -36,4 +36,12 @@ class Don extends Model
             'id_utilisateur'
         );
     }
+
+    public function transaction(){
+        return $this->belongsTo(
+            Transaction::class,
+            'id_don',
+            'id_don'
+        );
+    }
 }

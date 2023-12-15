@@ -19,11 +19,15 @@ class Association extends Model
         "nom_association",
         "siteweb_association",
         "description_association",
-        "numerotelephone_association"
+        "numerotelephone_association",
+        "tot_mois"
 
     ];
 
+
+    
     public function publications(){
         return $this->hasMany(Publication::class, "id_association");
     }
+
 }

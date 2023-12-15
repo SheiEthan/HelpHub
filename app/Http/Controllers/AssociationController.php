@@ -203,6 +203,15 @@ class AssociationController extends Controller
     public function mypublicationbenevoles($id){
         $publication= Publication::findOrFail($id);
 
+
+        if(null !==$publication->information_don->first()){
+            $publication->totmontant =0;
+                foreach($publication->information_don->first()->dons as $don)
+                {
+                    $publication->totmontant += $don->montant;
+                }
+            
+        }
         $joursSemaine = [
             1 => 'lundi',
             2 => 'mardi',
@@ -240,12 +249,143 @@ class AssociationController extends Controller
         foreach($publication->recherche_benevole->first()->candidatures as $candidature)
         {
             //$candidature->heures=
-            $candidature->heures=$request->get(("heures".$candidature->id_utilisateur));
+            $candidature->heures=$request->get(("heures".$candidature->id_utilisateur."-".$candidature->num_semaine));
             $candidature->save();
+
+
         }
 
 
         return redirect("/gestionheures/".$id);
+    }
+
+    public function infoupdatepublication($id){
+        $publication= Publication::findOrFail($id);
+        $motclefs = Mot_cle::all()->sortBy('mot_clef');
+        $thematiques = Thematique::all()->sortBy('titre_thematique');
+        if(null !==$publication->information_don->first()){
+            $publication->totmontant =0;
+                foreach($publication->information_don->first()->dons as $don)
+                {
+                    $publication->totmontant += $don->montant;
+                }
+            
+        }
+
+        $joursSemaine = [
+            1 => 'lundi',
+            2 => 'mardi',
+            3 => 'mercredi',
+            4 => 'jeudi',
+            5 => 'vendredi',
+            6 => 'samedi',
+            7 => 'dimanche'
+        ];
+
+        if(null !== $publication->recherche_benevole->first()){
+            foreach($publication->recherche_benevole as $benevole)
+            {
+                $publication->benevoles=$benevole->candidatures->count();
+                if(null !== $benevole->frequence->first())
+                {
+                    if (array_key_exists($benevole->frequence->first()->jour, $joursSemaine))
+                    {
+                        $benevole->frequence->first()->jour=$joursSemaine[$benevole->frequence->first()->jour];
+                    }
+                }
+            }
+        }
+        return view('updatePublication', [
+            "publication"=>$publication,
+            "thematiques" => $thematiques,
+            "motclefs" => $motclefs
+        ]);
+    }
+
+    public function updatepublication(Request $request, $id){
+        $publication= Publication::FindOrFail($id);
+        $thematiques = $request -> get('id_thematique');
+        $motclefs  = $request -> get('id_motclef');
+
+        if(null!==$motclefs)
+        {
+            foreach($publication->mot_clefs as $pmotclef){
+                $test = Mot_cle_publication::find([$pmotclef->id_mot_clef,$id]);
+                if(!in_array($pmotclef->id_mot_clef,$motclefs)&&$test )
+                {
+                    $test->delete();
+                }
+            }
+            foreach($motclefs as $motclef){
+            $test = Mot_cle_publication::find([$motclef, $id]);
+            if(!$test){
+                Mot_cle_publication::create(["id_publication"=> $publication->id_publication, "id_mot_clef"=>$motclef]);
+            }
+
+        }
+
+        
+        }
+
+        if(null!==$thematiques)
+        {
+            foreach($publication->thematiques as $pthematique){
+                $test = Thematique_publication::find([$pthematique->id_thematique, $id]);
+                if(!in_array($pthematique->id_thematique,$thematiques )&&$test )
+                {
+                    $test->delete();
+                }
+            }
+            foreach($thematiques as $thematique){
+                $test = Thematique_publication::find([ $thematique,$id]);
+                if(!$test){
+                    Thematique_publication::create(["id_publication"=> $publication->id_publication, "id_thematique"=>$thematique]);
+                }
+            }
+        }
+        $incr=1;
+
+        if(null!==$request->medias)
+        {foreach($request->medias as $media){
+            $type=2;
+            $incr++;
+
+            if(in_array($media->extension(),["jpeg","jpg","png","gif","wep"])){
+                $type=0;
+             }
+                else if(in_array($media->extension(),["mp4","wmv","avi"])){
+                    $type=1;
+                }
+            $medianame=$publication->id_publication."-".time().rand(0,100000).".".$media->extension();
+
+            $media->move(public_path("/img/"),$medianame);
+            $file=Media::create([
+                "titre_media"=>"unknown",
+                "type_media"=>$type,
+                "lien_media"=>$medianame
+            ]);
+
+            Media_publication::create([
+                "id_media"=>$file->id_media,
+                "id_publication"=>$publication->id_publication
+            ]);
+
+
+        }
+
+    }
+
+    if(null !== $publication->information_don->first()){
+        $validateddon = $request->validate([
+            "montant_minimum"=>['required', 'integer', 'min:0'],
+            "objectif"=>['required', 'integer', 'min:1','gt:montant_minimum']
+        ]);
+        $publication->information_don->first()->montant_minimum=$validateddon['montant_minimum'];
+        $publication->information_don->first()->objectif=$validateddon['objectif'];
+        $publication->information_don->first()->save();
+    }
+
+        return redirect('/myassociation')->with('status', 'publication-updated');
     }
 
 }

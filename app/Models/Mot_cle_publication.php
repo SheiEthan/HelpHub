@@ -11,7 +11,7 @@ class Mot_cle_publication extends Model
     use HasFactory;
     use HasCompositeKey;
     protected $table = "mot_cle_publication";
-    protected $primaryKey =(["id_publication","id_mot_clef"]);
+    protected $primaryKey =(["id_mot_clef","id_publication"]);
     public $timestamps = false;
 
 

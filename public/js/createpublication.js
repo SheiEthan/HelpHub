@@ -58,7 +58,3 @@ inputs.forEach(input=>{
   }})
 }
 
-const radioButtons = document.querySelectorAll('input[name="example"]');
-radioButtons.forEach(radio => {
-  radio.addEventListener('click', typeClick);
-});

@@ -50,6 +50,8 @@
                     <li classe="lifooter">
                         <a href="/" title="Devenir Bénévole">Chercher Bénévoles</a>
                     </li>
+                    <li><a href="/cookies">Page cookies</a></li>
+                    <li><a href="/politiquesprotec">Politiques de confidentialité</a></li>
                 </ul>
                 <small class="droit">Copyright © 2023 HelpHub.fr. Tous droits réservés.</small>
             </nav>  

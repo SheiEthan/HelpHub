@@ -53,7 +53,7 @@
 
         <div>
             <x-input-label for="numerotelephone_association" :value="__('Téléphone :*')" />
-            <x-text-input id="numerotelephone_association" name="numerotelephone_association" type="tel" pattern="0[0-9]{9}" placeholder="01 23 45 67 89"  class="mt-1 block w-full" :value="old('numerotelephone_association')"  autofocus autocomplete="numerotelephone_association" />
+            <x-text-input id="numerotelephone_association" name="numerotelephone_association" type="tel" pattern="0[4-7]{1}[0-9]{8}" placeholder="0123456789"  class="mt-1 block w-full" :value="old('numerotelephone_association')"  autofocus autocomplete="numerotelephone_association" />
             <x-input-error class="mt-2" :messages="$errors->get('numerotelephone_association')" />
         </div>
         <div>

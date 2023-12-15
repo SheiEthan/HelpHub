@@ -27,7 +27,7 @@
         @foreach($candidatures as $candidature)
         <div class="res_candidature">
             <p id="user"> {{$candidature->utilisateur->user->name}} </p>
-            <p id="desc"> {{$candidature->publication_recherche_benevole->publication->titre_publication}} </p>
+            <p id="desc"> {{$candidature->recherche_benevole->publication->titre_publication}} </p>
             <form action="/servicebenevolat/valider/{{$candidature->id_utilisateur}}/{{$candidature->id_recherche_benevole}}" method="post">
                 @csrf
                     <button id="butt" class="buttonv" name="buttonv" type="submit" > Valider Candidature </button>  
