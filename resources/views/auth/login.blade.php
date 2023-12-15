@@ -44,11 +44,18 @@
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div id="connexion" class="flex items-center justify-end -mt-4">
             
-            <a class="underline text-sm mr-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
+            <a id="compte" class="underline text-sm mr-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
                     {{ __('Créer un compte') }}
                 </a>
+                <div id="google">
+                    <img id="imggoogle" src="img/google.png" >
+                    <a id="comptegoogle" class="underline text-sm mr-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="/login/google">
+                    {{ __('Se connecter avec google') }}
+                    </a>
+                </div>
+                
 
             <x-primary-button class="bouton">
                 {{ __('Se connecter') }}

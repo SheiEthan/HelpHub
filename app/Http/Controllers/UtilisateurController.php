@@ -30,7 +30,7 @@ class UtilisateurController extends Controller
 
         $validated = $request->validate([
             
-            "nom_utilisateur" =>   ["required", "string", "min:1"],
+            "nom_utilisateur" =>   ["required", "string", "min:1",],
             "prenom_utilisateur" =>   ["required", "string", "min:1"],
             "pseudo_utilisateur" =>   ["required", "string", "min:1"]
 

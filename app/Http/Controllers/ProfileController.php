@@ -45,22 +45,30 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
         $utilisateur=Utilisateur::where('id_user',$request->user()->id)->get();
-        $request->user()->save();
+        $validate =[
+            "id_localisation" => $request -> get('id_localisation'),
+            "nom_utilisateur" => $request -> get('nom_utilisateur'),
+            "prenom_utilisateur" => $request -> get('prenom_utilisateur'),
+            
 
+        ];
+        $request->user()->save();
+            if($request -> get('numero_telephone_utilisateur') !=""
+            &&$request -> get('numero_telephone_utilisateur') !=$utilisateur[0]->numero_telephone_utilisateur){
+                $validate+=$request->validate(["numero_telephone_utilisateur" => ['max:10', 'unique:'.Utilisateur::class]]);
+            }
+            else
+            {
+                $validate+=["numero_telephone_utilisateur" =>$request->get('numero_telephone_utilisateur')];
+            }
         DB::table('utilisateur')
               ->where('id_utilisateur', $utilisateur[0]->id_utilisateur)
-              ->update([
-                "id_localisation" => $request -> get('id_localisation'),
-                "nom_utilisateur" => $request -> get('nom_utilisateur'),
-                "prenom_utilisateur" => $request -> get('prenom_utilisateur'),
-                "numero_telephone_utilisateur" => $request -> get('numero_telephone_utilisateur')
+              ->update($validate);
 
-            ]);
-        /*$request->$utilisateur[0]->save();*/
 
         
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('dashboard')->with('status', 'profile-updated');
     }
 
     /**

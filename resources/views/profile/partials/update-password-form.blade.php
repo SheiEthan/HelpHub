@@ -21,13 +21,15 @@
 
         <div>
             <x-input-label for="password" :value="__('Nouveau mot de passe :')" />
-            <x-text-input id="password" name="password" type="password" class="mt-1 block w-full" autocomplete="new-password" />
+            <x-text-input id="password" name="password" type="password" class="mt-1 block w-full"             minLength=12
+                            pattern="(?=.*[0-9])(?=.*[#?!@$%^&*-_\/])(?=.*[a-z])(?=.*[A-Z]).{12,}" autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
         </div>
 
         <div>
             <x-input-label for="password_confirmation" :value="__('Confirmez le mot de passe :')" />
-            <x-text-input id="password_confirmation" name="password_confirmation" type="password" class="mt-1 block w-full" autocomplete="new-password" />
+            <x-text-input id="password_confirmation" name="password_confirmation" type="password" class="mt-1 block w-full"             minLength=12
+                            pattern="(?=.*[0-9])(?=.*[#?!@$%^&*-_\/])(?=.*[a-z])(?=.*[A-Z]).{12,}" autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
         </div>
 

@@ -1,0 +1,62 @@
+#title{
+    font-size: 20px;
+    font-size: 50px;
+    position: relative;
+    z-index: 10;
+}
+
+h2 {
+    font-size: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+
+.medias {
+    height: 100px;
+  }
+  
+.imgmedia {
+    height: 300px;
+    width: 400px;
+    display: flex;
+    border-radius: 5%;
+  }
+  
+.info{
+    margin-left: 450px;
+    margin-top: -275px;
+    margin-bottom: 50px;
+  }
+  
+.caroussel {
+    width: 425px;
+    height: 300px;
+    overflow:auto;
+    margin-top: 50px;
+    position: relative;
+    margin-left: 20px;
+}
+  
+img.imgmedia {
+    object-fit: cover;
+  }
+
+img {
+    width: auto;
+    height: auto;
+}
+
+#voir {
+  color: blue;
+}
+
+.commentaire {
+  margin-top: 140px;
+  margin-left: -400px;
+  margin-bottom: 20px;
+}
+
+.divComm {
+  margin-top: 20px;
+}

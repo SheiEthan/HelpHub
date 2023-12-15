@@ -5,11 +5,12 @@
 }
 
 /*  pour la page de connexion  */
-h1 {
+.title1 {
     color: rgb(255, 255, 255);
     font-family: 'tommy', sans-serif;
     font-size: 40px;
     margin-top: 10px;
+    text-align: center;
 }
 
 body {
@@ -18,14 +19,14 @@ body {
 }
   
 header {
-    background-color: rgb(128, 186, 140);
+    background-image: url("/img/fond.PNG");
+    background-size: cover;
     height: 75;
     background-size: cover;
     color: #fff;
     justify-content: space-between;
     padding: 15px 20px;
-    text-align: center;
-  }
+}
   
 .burger-checkbox {
     display: none;
@@ -53,7 +54,7 @@ header {
   
 .menu {
     display: none;
-    background-color: #444;
+    background-color: rgb(103, 156, 113);
     padding: 20px;
     position: absolute;
     top: 60px;
@@ -84,3 +85,31 @@ header {
     display: block;
   }
   
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30%;
+}
+
+footer{
+  position:absolute;
+  background-color: rgb(128, 186, 140);
+  background-size: cover;
+  width:100%;
+  text-align: center;
+}
+
+footer ul {
+  list-style-type: none; 
+  text-align: center;
+  position: relative ;
+  margin-left: -50px;
+}
+
+footer li {
+  display: inline-block;
+  margin-left: 10px;
+}
+

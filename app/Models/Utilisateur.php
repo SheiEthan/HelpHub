@@ -27,4 +27,27 @@ class Utilisateur extends Model
         "id_user" => "integer",
         "id_localisation" => "integer"
     ];
+
+    
+    public function dons(){
+        return $this->hasMany(
+            Don::class,
+            'id_utilisateur'
+        );
+    }
+
+    public function candidatures(){
+        return $this->hasMany(
+            Candidature::class,
+            'id_utilisateur'
+        );
+    }
+
+    public function user(){
+        return $this->belongsTo(
+            User::class,
+            'id_user',
+            'id'
+        );
+    }
 }

@@ -91,6 +91,7 @@ h2 {
 
 .bouton {
     display: inline-flex; 
+    margin-top: 120px;
     margin-left: 50px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem; 
@@ -112,8 +113,30 @@ h2 {
     transition-duration: 300ms; 
     transition-duration: 150ms; 
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    width: 200px;
 }
 
 .bouton:hover {
     background-color: rgb(108, 157, 118); 
     }
+
+#google {
+    display: inline-block;
+    width: 450px;
+    margin-right: -180px;
+    text-decoration: none;
+}
+
+#imggoogle {
+    display:inline-block;
+    width: 30px;
+    height: auto;
+}
+
+#compte {
+    width: 200px;
+}
+
+#connexion {
+    margin-top: -60px;
+}

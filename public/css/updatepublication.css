@@ -1,0 +1,98 @@
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fdfdfd;
+    font-family: 'Open Sans', sans-serif;
+}
+.container {
+    width: 500px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+#select-image {
+    display: none;
+}
+
+#labimage {
+    display: flex;
+    align-items: center;
+    background: #025bee;
+    padding: 18px 30px;
+    color: #ffffff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor:pointer;
+}
+
+label svg {
+    fill: #ffffff;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.preview_image p {
+    text-align: center;
+}
+
+#images {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image_box {
+    width: 45%;
+}
+
+img {
+    width: 100%;
+}
+
+.image_name {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+}
+
+.desc {
+  font-size: 10px;
+}
+
+
+
+.collapsible{
+    border-style: ridge;
+    border-width: 2px;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    border-color: rgb(211, 211, 211);
+    width: 355px;
+    background-color: white;
+}
+
+
+.noselect {
+    -moz-user-select: none; /* Firefox */
+   -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+   -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+   user-select: none; /* Propriété standard */
+   margin-left: -30px;
+  }

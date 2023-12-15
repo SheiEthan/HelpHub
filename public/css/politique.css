@@ -1,0 +1,26 @@
+details{
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+    width: 1200px;
+    margin-left: 11%;
+    margin-bottom: 20px;
+}
+
+summary{
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+    color:rgb(103, 156, 113)
+}
+
+details[open]{
+    padding: 0.5em;
+}
+
+h1 {
+    color:rgb(103, 156, 113);
+    text-align: center;
+    margin-bottom: 40px;
+}
+

@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+    color:rgb(103, 156, 113);
+}
+
+h2 {
+    margin-left: 5%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color:rgb(103, 156, 113);
+}
+
+p{
+    margin-left: 10%;
+}
+
+ul{
+    margin-left: 15%;
+}
+
+.link{
+    text-decoration: none;
+    margin-left: 25%;
+    margin-bottom: 10px;
+    background-color: rgb(103, 156, 113);
+    color: white;
+    padding: 5px 25px 5px 25px;
+    border-radius: 10px;
+}
